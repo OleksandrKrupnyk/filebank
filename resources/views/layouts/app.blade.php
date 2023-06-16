@@ -19,6 +19,8 @@
     />
     <title>Dashboard | File Bank</title>
     <script src="{{URL::asset('build/lib/ckeditor5-build-classic/ckeditor.js' )}}"></script>
+    <script src="{{URL::asset('build/lib/tinymce/tinymce.min.js')}}"></script>
+
     @vite('resources/css/app.css')
 </head>
 <body class="text-blueGray-700 antialiased">
