@@ -22,6 +22,7 @@
     <script src="{{URL::asset('build/lib/tinymce/tinymce.min.js')}}"></script>
 
     @vite('resources/css/app.css')
+    @livewireStyles
 </head>
 <body class="text-blueGray-700 antialiased">
 <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -44,6 +45,7 @@
                         <div class="rounded-t mb-0 px-4 py-3 bg-transparent">
                             <div class="flex flex-wrap items-center" id="app">
                                 @yield('body')
+                                {{ $slot??'' }}
                             </div>
                         </div>
                     </div>
@@ -63,5 +65,6 @@
 <!--scripts-stack-->
 @stack('scripts')
 @vite('resources/js/app.js')
+@livewireScripts
 </body>
 </html>

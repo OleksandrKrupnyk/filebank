@@ -2,20 +2,10 @@
 @section('body')
     <div class="container mx-auto px-4">
         <div>
-        <label
-            for="ckeditor"
-            class="block uppercase text-gray-700 text-xs font-bold mb-2"
-        >Editor</label>
-        <textarea
-            id="ckeditor"
-            class=""
-            rows="9"
-            name="content"
-        ></textarea>
             <label
                 for="tinymce"
                 class="block uppercase text-gray-700 text-xs font-bold mb-2"
-            >Editor2</label>
+            >Editor Tiny MCE</label>
             <textarea
             id="tinymce"
             class=""
@@ -37,18 +27,6 @@
 @endsection
 @once
     @push('scripts')
-        <script>
-            ClassicEditor
-                .create( document.querySelector( '#ckeditor' ) )
-                .catch( error => {
-                    console.error( error );
-                } ).then(
-                    function (error){
-                        console.error('TEXT')
-                        console.dir(error)
-                    }
-            );
-        </script>
         <script>
             tinymce.init({
                 height: 500,

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Livewire\NoteWireController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,4 +34,7 @@ Route::middleware('logA')->group(function () {
     Route::get('/article/{model}/edit', [ArticleController::class, 'edit'])->name('art.edit');
     Route::match(['PUT', 'PATCH'], '/article/{model}', [ArticleController::class, 'update'])->name('art.update');
     Route::delete('/article/{model}', [ArticleController::class, 'delete'])->name('art.delete');
+
+
+    Route::get('/notes',NoteWireController::class)->name('note.list');
 });

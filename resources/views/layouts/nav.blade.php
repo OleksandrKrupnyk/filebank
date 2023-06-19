@@ -1,5 +1,5 @@
 @php
-    use App\Http\Controllers\ArticleController;use App\Http\Controllers\UserProfileController;$cr = request()->route()->getControllerClass();
+    use App\Http\Controllers\ArticleController;use App\Http\Controllers\UserProfileController;use App\Http\Livewire\NoteWireController;$cr = request()->route()->getControllerClass();
 @endphp
 <nav
     class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6"
@@ -156,6 +156,14 @@
                         href="{{ route('art.index') }}"
                     ><i class="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>
                         Article</a
+                    >
+                </li>
+                <li class="items-center">
+                    <a
+                        class="{{$cr === NoteWireController::class ? 'text-pink-500 hover:text-pink-600':'text-blueGray-700 hover:text-blueGray-500' }} text-xs uppercase py-3 font-bold block"
+                        href="{{ route('note.list') }}"
+                    ><i class="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>
+                        Notes Wire</a
                     >
                 </li>
             </ul>
